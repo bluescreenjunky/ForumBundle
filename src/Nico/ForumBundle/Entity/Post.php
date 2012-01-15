@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Post
 {
@@ -18,6 +19,12 @@ class Post
      * @ORM\JoinColumn(name="thread_id", referencedColumnName="id")
      */
     protected $thread;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Nico\ProfileBundle\Entity\User", inversedBy="posts")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * @var integer $id
@@ -165,5 +172,25 @@ class Post
     public function getThread()
     {
         return $this->thread;
+    }
+
+    /**
+     * Set user
+     *
+     * @param Nico\ForumBundle\Entity\User $user
+     */
+    public function setUser(\Nico\ForumBundle\Entity\User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get user
+     *
+     * @return Nico\ForumBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
