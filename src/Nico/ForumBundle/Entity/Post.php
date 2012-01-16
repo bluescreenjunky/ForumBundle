@@ -3,6 +3,7 @@
 namespace Nico\ForumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Nico\ForumBundle\Entity\Post
@@ -177,9 +178,9 @@ class Post
     /**
      * Set user
      *
-     * @param Nico\ForumBundle\Entity\User $user
+     * @param Nico\ProfileBundle\Entity\User $user
      */
-    public function setUser(\Nico\ForumBundle\Entity\User $user)
+    public function setUser(\Nico\ProfileBundle\Entity\User $user)
     {
         $this->user = $user;
     }

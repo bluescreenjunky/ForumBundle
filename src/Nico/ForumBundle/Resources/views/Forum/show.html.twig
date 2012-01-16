@@ -1,1 +1,21 @@
-Forum {{ forum.title}}!
+{% extends "NicoForumBundle::base.html.twig" %}
+{% block content %}
+Contenu du forum {{forum.title}}
+
+<h2>Sous-Forums :</h2>
+{% for child in forum.children %}
+<a href="{{path('forum_show', {"id": child.id})}}">{{child.title}}</a> <br />
+
+{%if child.children|length %}
+sous-forums :
+{% for grandchild in child.children %}
+<a href="{{path('forum_show', {"id": grandchild.id})}}">{{grandchild.title}}</a>
+{%endfor%}
+<br/>
+{%endif%}
+{%endfor%}
+<h2>Sujets :</h2>
+{% for thread in forum.threads%}
+{{thread.title}} <br />
+{%endfor%}
+{% endblock %}
