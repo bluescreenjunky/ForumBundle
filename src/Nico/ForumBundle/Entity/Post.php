@@ -37,13 +37,6 @@ class Post
     private $id;
 
     /**
-     * @var string $title
-     *
-     * @ORM\Column(name="title", type="string", length=255)
-     */
-    private $title;
-
-    /**
      * @var text $body
      *
      * @ORM\Column(name="body", type="text")
@@ -60,7 +53,7 @@ class Post
     /**
      * @var datetime $dateupdated
      *
-     * @ORM\Column(name="dateupdated", type="datetime")
+     * @ORM\Column(name="dateupdated", type="datetime", nullable="true")
      */
     private $dateupdated;
 
@@ -75,25 +68,6 @@ class Post
         return $this->id;
     }
 
-    /**
-     * Set title
-     *
-     * @param string $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * Get title
-     *
-     * @return string 
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
 
     /**
      * Set body

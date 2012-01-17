@@ -17,7 +17,7 @@ use Nico\ProfileBundle\NicoProfileBundle;
 class ForumController extends Controller
 {
     /**
-     * @Route("/show/{id}", name="forum_show")
+     * @Route("/show/{id}", name="forum_show", defaults={"id" = "0"})
      * @Template()
      */
     public function showAction($id)

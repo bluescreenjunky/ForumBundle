@@ -3,6 +3,7 @@
 namespace Nico\ForumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Nico\ForumBundle\Entity\Forum
@@ -168,5 +169,9 @@ class Forum
     public function getParent()
     {
         return $this->parent;
+    }
+
+    public function __toString() {
+        return $this->id." : ".$this->title;
     }
 }

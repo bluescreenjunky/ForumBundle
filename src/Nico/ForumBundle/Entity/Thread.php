@@ -19,6 +19,11 @@ class Thread
      */
     protected $posts;
 
+    /**
+     * objet firstpost temporaire pour la création de nouveau thread.
+     */
+    private $firstpost;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -169,5 +174,23 @@ class Thread
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    /**
+     * Get FirstPost
+     */
+    public function getFirstpost()
+    {
+        return $this->firstpost;
+    }
+    /**
+     * Set FirstPost
+     */
+    public function setFirstpost(\Nico\ForumBundle\Entity\Post $firstpost = null)
+    {
+        $this->firstpost = $firstpost;
+        $this->firstpost->setDatecreated(new \DateTime('now'));
+        //$this->firstpost->setTitle($this->Title)
     }
 }

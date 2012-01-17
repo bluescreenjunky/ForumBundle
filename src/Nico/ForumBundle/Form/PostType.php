@@ -12,6 +12,13 @@ class PostType extends AbstractType
         $builder->add('body');
     }
 
+    public function getDefaultOptions(array $options)
+    {
+        return array(
+            'data_class' => 'Nico\ForumBundle\Entity\Post',
+        );
+    }
+
     public function getName()
     {
         return 'post';
