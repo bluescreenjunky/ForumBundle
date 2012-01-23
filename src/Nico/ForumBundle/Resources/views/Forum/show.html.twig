@@ -16,6 +16,6 @@ sous-forums :
 {%endfor%}
 <h2>Sujets :</h2>
 {% for thread in forum.threads%}
-{{thread.title}} <br />
+<a href="{{path('thread_show', {"id": thread.id})}}">{{thread.title}}</a> <br />
 {%endfor%}
 {% endblock %}

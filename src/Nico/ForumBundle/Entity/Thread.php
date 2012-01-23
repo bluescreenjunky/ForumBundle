@@ -191,6 +191,6 @@ class Thread
     {
         $this->firstpost = $firstpost;
         $this->firstpost->setDatecreated(new \DateTime('now'));
-        //$this->firstpost->setTitle($this->Title)
+        $this->firstpost->setThread($this);
     }
 }

@@ -1,0 +1,8 @@
+{% extends "NicoForumBundle::base.html.twig" %}
+{% block content %}
+<h2>Sujet : {{thread.title}}</h2>
+{% for post in thread.posts %}
+{{post.body}}
+<hr />
+{%endfor%}
+{% endblock %}
