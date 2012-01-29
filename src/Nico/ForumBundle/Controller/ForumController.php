@@ -31,6 +31,7 @@ class ForumController extends Controller
 
     /**
      * @Route("/new", name="forum_new")
+     * @Secure(roles="ROLE_USER")
      * @Template()
      */
     public function newAction()

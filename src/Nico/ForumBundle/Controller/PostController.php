@@ -31,6 +31,7 @@ class PostController extends Controller
     /**
      * @Route("/new/{thread_id}", name="post_new", defaults={"thread_id" = "0"})
      * @Template()
+     * @Secure(roles="ROLE_USER")
      */
     public function newAction($thread_id)
     {

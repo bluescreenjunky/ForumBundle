@@ -34,6 +34,7 @@ class ThreadController extends Controller
 
     /**
      * @Route("/new/{forum_id}", name="thread_new", defaults={"forum_id" = "0"})
+     * @Secure(roles="ROLE_USER")
      * @Template()
      */
     public function newAction($forum_id)
