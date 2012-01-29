@@ -11,6 +11,7 @@ use Nico\ForumBundle\Form\PostType;
 use Nico\ForumBundle\Entity\Post;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Nico\ProfileBundle\NicoProfileBundle;
 
 
