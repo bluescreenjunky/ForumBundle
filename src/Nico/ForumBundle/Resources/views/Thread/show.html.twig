@@ -2,6 +2,7 @@
 {% block content %}
 <h2>Sujet : {{thread.title}}</h2>
 {% for post in thread.posts %}
+<strong>{{post.user}}</strong> <br />
 {{post.body}}
 <hr />
 {%endfor%}

@@ -54,13 +54,18 @@ class ThreadController extends Controller
             if ($form->isValid())
             {
                 $em = $this->container->get('doctrine')->getEntityManager();
-                $thread->setDatecreated(new \DateTime('now'));
+                $thread->setDatecreated(new \DateTime );
 
                 $forum = $this->getDoctrine()
                     ->getRepository('NicoForumBundle:Forum')
                     ->find($forum_id);
 
+                $user = $this->get('security.context')->getToken()->getUser();
+
                 $thread->setForum($forum);
+                $thread->setUser($user);
+                $thread->getFirstpost()->setUser($user);
+
                 $em->persist($thread);
                 $em->persist($thread->getFirstpost());
 

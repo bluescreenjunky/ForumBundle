@@ -54,6 +54,9 @@ class PostController extends Controller
                 $post->setThread($thread);
                 $post->setDatecreated(new \DateTime('now'));
 
+                $user = $this->get('security.context')->getToken()->getUser();
+                $post->setUser($user);
+
                 $em = $this->container->get('doctrine')->getEntityManager();
                 $em->persist($post);
                 $em->flush();
